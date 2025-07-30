@@ -1,27 +1,36 @@
-# JSON to CSV Converter from Ragged Directories
+## Exercise #4 - Convert JSON to CSV + Ragged Directories.
 
-This project is a simple Python utility that recursively searches through a ragged directory structure, identifies all `.json` files, flattens their nested structures, and converts them into `.csv` files.
+In this fourth exercise you will practice your Python skills again,
+we will be searching a ragged directory structure, trying to find `json` files.
+When `json` files are found, we will then convert them to `csv` files.
 
-## 🚀 Project Summary
+We can work with three nice `Python` packages, `glob`, `json`, and `csv`.
 
-- 📂 Recursively searches the `data/` folder for `.json` files.
-- 📉 Flattens nested JSON structures (e.g. GeoJSON-style coordinate points).
-- 📄 Outputs one CSV per JSON file, preserving headers and structure.
 
-## 🛠️ Technologies Used
+#### Setup
+1. Change directories at the command line 
+   to be inside the `Exercise-4` folder `cd Exercises/Exercise-4`
+   
+2. Run `docker build --tag=exercise-4 .` to build the `Docker` image.
 
-- Python 3
-- `glob` for file searching
-- `json` for parsing
-- `csv` for writing
-- Docker for packaging
+3. There is a file called `main.py` in the `Exercise-4` directory, this
+is where you `Python` code to complete the exercise should go.
+   
+4. Once you have finished the project or want to test run your code,
+   run the following command `docker-compose up run` from inside the `Exercises/Exercise-4` directory
 
-## 📦 Setup Instructions
+#### Problems Statement
+There is a folder called `data` in this current directory, `Exercises/Exercise-4`. There are also
+`json` files located at various spots inside this directory structure.
 
-1. Clone the repository:
+Your task is two use `Python` to find all the `json` files located in the `data` folder.
+Once you find them all, read them with `Python` and convert them to `csv` files, to do this
+you will have to flatten out some of the nested `json` data structures.
 
-```bash
-git clone https://github.com/your-username/json-to-csv-ragged-dir.git
-cd json-to-csv-ragged-dir
-docker build --tag=exercise-4 .
-docker-compose up
+For example there is a `{"type":"Point","coordinates":[-99.9,16.88333]}` that must flattened.
+
+Generally, your script should do the following ...
+1. Crawl the `data` directory with `Python` and identify all the `json` files.
+2. Load all the `json` files.
+3. Flatten out the `json` data structure.
+4. Write the results to a `csv` file, one for one with the json file, including the header names.
